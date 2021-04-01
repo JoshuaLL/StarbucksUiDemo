@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">StarbucksUI</string>
+    <string name="title_wallet">Wallet</string>
+    <string name="title_scan">Scan</string>
+    <string name="title_phone">Phone</string>
+    <string name="title_explore">Explore</string>
+    <string name="title_chat">Chat</string>
+</resources>
