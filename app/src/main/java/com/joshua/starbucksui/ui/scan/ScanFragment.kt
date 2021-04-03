@@ -1,28 +1,22 @@
 package com.joshua.starbucksui.ui.scan
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.joshua.starbucksui.R
+import com.joshua.starbucksui.databinding.FragmentScanBinding
 
-class ScanFragment : Fragment() {
+class ScanFragment : Fragment(R.layout.fragment_scan) {
 
+    private lateinit var binding : FragmentScanBinding
     private val scanViewModel: ScanViewModel by viewModels()
 
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
-        val root = inflater.inflate(R.layout.fragment_scan, container, false)
-        val textView: TextView = root.findViewById(R.id.text_dashboard)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding =FragmentScanBinding.bind(view)
         scanViewModel.text.observe(viewLifecycleOwner){
-            textView.text = it
+            binding.tvContent.text = it
         }
-        return root
     }
 }

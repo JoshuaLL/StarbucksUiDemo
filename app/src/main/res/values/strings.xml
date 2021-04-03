@@ -1,8 +1,13 @@
 <resources>
-    <string name="app_name">StarbucksUI</string>
+    <string name="app_name">SWIPER</string>
     <string name="title_wallet">Wallet</string>
     <string name="title_scan">Scan</string>
     <string name="title_phone">Phone</string>
     <string name="title_explore">Explore</string>
     <string name="title_chat">Chat</string>
+    <string name="profile_name">Starbucks</string>
+    <string name="store">Store</string>
+    <string name="code">活動代碼</string>
+    <string name="business">合作電商</string>
+    <string name="mall">滑眾商城</string>
 </resources>

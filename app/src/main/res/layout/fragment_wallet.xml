@@ -6,17 +6,170 @@
     android:layout_height="match_parent"
     tools:context=".ui.wallet.WalletFragment">
 
-    <TextView
-        android:id="@+id/text_home"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:background="@android:color/transparent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_profile_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_starbucks"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_profile_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/profile_name"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/iv_profile_icon"
+                app:layout_constraintTop_toTopOf="@+id/iv_profile_icon" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_store"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bn_radius_10_bg"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="2dp"
+                android:layout_marginStart="16dp"
+                android:text="@string/store"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_profile_icon"
+                app:layout_constraintStart_toEndOf="@+id/iv_profile_icon" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_settings_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_settings"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/iv_profile_icon"
+                app:layout_constraintBottom_toBottomOf="@id/iv_profile_icon"/>
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_notification_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_notifications"
+                android:layout_marginEnd="15dp"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/iv_settings_icon"
+                app:layout_constraintTop_toTopOf="@id/iv_profile_icon"
+                app:layout_constraintBottom_toBottomOf="@id/iv_profile_icon"/>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/CustomCardView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/iv_settings_icon"
+                app:layout_constraintStart_toStartOf="@+id/iv_profile_icon"
+                app:layout_constraintTop_toBottomOf="@+id/iv_profile_icon"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableTop="@drawable/ic_code"
+                        android:text="@string/code"
+                        android:textColor="@color/black"
+                        app:layout_constraintHorizontal_chainStyle="spread"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/v_divider1"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    <View
+                        android:id="@id/v_divider1"
+                        android:layout_width="1dp"
+                        android:layout_height="0dp"
+                        android:background="@color/gray_200"
+                        app:layout_constraintTop_toTopOf="@+id/tv_code"
+                        app:layout_constraintStart_toEndOf="@+id/tv_code"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_business"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_business"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableTop="@drawable/ic_shopping"
+                        android:text="@string/business"
+                        android:textColor="@color/black"
+                        app:layout_constrainedWidth="true"
+                        app:layout_constraintStart_toEndOf="@+id/v_divider1"
+                        app:layout_constraintEnd_toStartOf="@+id/v_divider2"
+                        app:layout_constraintTop_toTopOf="@+id/tv_code" />
+
+                    <View
+                        android:id="@id/v_divider2"
+                        android:layout_width="1dp"
+                        android:layout_height="0dp"
+                        android:background="@color/gray_200"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_code"
+                        app:layout_constraintStart_toEndOf="@+id/tv_business"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_mall"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_mall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableTop="@drawable/ic_store"
+                        android:text="@string/mall"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toEndOf="@+id/v_divider2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_code" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        
+    </com.google.android.material.appbar.AppBarLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

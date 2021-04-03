@@ -1,28 +1,23 @@
 package com.joshua.starbucksui.ui.phone
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.joshua.starbucksui.R
+import com.joshua.starbucksui.databinding.FragmentPhoneBinding
 
-class PhoneFragment : Fragment() {
+class PhoneFragment : Fragment(R.layout.fragment_phone) {
+    private lateinit var binding: FragmentPhoneBinding
 
     private val phoneViewModel: PhoneViewModel by viewModels()
 
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
-        val root = inflater.inflate(R.layout.fragment_phone, container, false)
-        val textView: TextView = root.findViewById(R.id.text_notifications)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = FragmentPhoneBinding.bind(view)
         phoneViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+            binding.tvContent.text = it
         }
-        return root
+
     }
 }

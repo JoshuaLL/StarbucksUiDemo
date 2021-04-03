@@ -1,29 +1,23 @@
 package com.joshua.starbucksui.ui.explore
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.joshua.starbucksui.R
+import com.joshua.starbucksui.databinding.FragmentExploreBinding
 
-class ExploreFragment : Fragment() {
+class ExploreFragment : Fragment(R.layout.fragment_explore) {
 
+    private lateinit var binding: FragmentExploreBinding
     private val exploreViewModel: ExploreViewModel by viewModels()
 
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
-
-        val root = inflater.inflate(R.layout.fragment_explore, container, false)
-        val textView: TextView = root.findViewById(R.id.text_dashboard)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = FragmentExploreBinding.bind(view)
         exploreViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+            binding.tvContent.text = it
         }
-        return root
+
     }
 }

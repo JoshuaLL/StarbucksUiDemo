@@ -8,21 +8,18 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.joshua.starbucksui.R
+import com.joshua.starbucksui.databinding.FragmentPhoneBinding
+import com.joshua.starbucksui.databinding.FragmentWalletBinding
 
-class WalletFragment : Fragment() {
+class WalletFragment : Fragment(R.layout.fragment_wallet) {
 
+    private lateinit var binding: FragmentWalletBinding
     private val walletViewModel: WalletViewModel by viewModels()
 
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
-        val root = inflater.inflate(R.layout.fragment_wallet, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
-        walletViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = FragmentWalletBinding.bind(view)
+//        binding.appBar.layoutParams.height =
+
     }
 }
