@@ -10,4 +10,15 @@
     <string name="code">活動代碼</string>
     <string name="business">合作電商</string>
     <string name="mall">滑眾商城</string>
+    <string name="record">容幣</string>
+    <string name="voucher">兌換卷</string>
+    <string name="xnc">XNC（無限錢包）</string>
+    <string name="interaction_reward">Interaction reward</string>
+    <string name="social_reward">Social reward</string>
+    <string name="revenue">Revenue</string>
+    <string name="more">更多詳情</string>
+    <string-array name="wallet_tabs">
+        <item>@string/record</item>
+        <item>@string/voucher</item>
+    </string-array>
 </resources>

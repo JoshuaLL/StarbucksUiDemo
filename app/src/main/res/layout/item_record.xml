@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_white_radius_10">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_token_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_mood"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_token_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/record"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/iv_token_icon"
+        app:layout_constraintTop_toTopOf="@+id/iv_token_icon" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/iv_token_xnc_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/xnc"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_token_icon"
+        app:layout_constraintStart_toEndOf="@+id/iv_token_icon" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_token"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_token_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="9,999,999"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_token_xnc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/iv_token_xnc_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text=".199"/>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:max="100"
+        android:progress="50"
+        android:progressTint="@color/teal_200"
+        app:layout_constraintEnd_toStartOf="@+id/tv_expiry_date"
+        app:layout_constraintStart_toStartOf="@+id/iv_token_icon"
+        app:layout_constraintTop_toBottomOf="@+id/iv_token_icon"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_expiry_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/progress_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/progress_bar"
+        tools:text="365天到期"/>
+
+    <View
+        android:id="@+id/view_rewards_bg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_grey_radius_10"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_revenue_title"
+        app:layout_constraintEnd_toEndOf="@+id/tv_token"
+        app:layout_constraintStart_toStartOf="@+id/iv_token_icon"
+        app:layout_constraintTop_toBottomOf="@+id/progress_bar" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_reward_interaction_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:text="@string/interaction_reward"
+        app:layout_constraintVertical_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="@+id/iv_token_icon"
+        app:layout_constraintTop_toBottomOf="@+id/progress_bar"
+        app:layout_constraintBottom_toTopOf="@+id/tv_reward_social_title"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_reward_interaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="26dp"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintTop_toTopOf="@+id/tv_reward_interaction_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="+123.456"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_reward_social_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:text="@string/social_reward"
+        app:layout_constraintStart_toStartOf="@+id/iv_token_icon"
+        app:layout_constraintTop_toBottomOf="@+id/tv_reward_interaction_title"
+        app:layout_constraintBottom_toTopOf="@+id/tv_revenue_title"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_reward_social"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintTop_toTopOf="@+id/tv_reward_social_title"
+        app:layout_constraintEnd_toEndOf="@+id/tv_reward_interaction"
+        tools:text="+1.000"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_revenue_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="@string/revenue"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/iv_token_icon"
+        app:layout_constraintTop_toBottomOf="@+id/tv_reward_social_title" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_revenue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintTop_toTopOf="@+id/tv_revenue_title"
+        app:layout_constraintEnd_toEndOf="@+id/tv_reward_interaction"
+        tools:text="+987654.321"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_more_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/more"
+        android:textColor="@color/teal_200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_rewards_bg" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
