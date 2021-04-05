@@ -1,7 +1,6 @@
 package com.joshua.starbucksui
 
 import android.app.Application
-import android.util.Log
 import com.joshua.starbucksui.model.di.dbModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger

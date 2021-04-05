@@ -1,13 +1,16 @@
 package com.joshua.starbucksui.model.vo
 
+import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverter
 import com.google.gson.Gson
 import com.joshua.starbucksui.model.db.AppDB.Companion.TABLE_RECORD
+import kotlinx.android.parcel.Parcelize
 
 @Entity(tableName = TABLE_RECORD)
+@Parcelize
 data class RecordItem(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
@@ -29,8 +32,7 @@ data class RecordItem(
     @ColumnInfo(name = "time")
     val time: String="",
     @ColumnInfo(name = "vendor")
-    val vendor: String){
-}
+    val vendor: String): Parcelable
 
 class RecordItemConverters {
     @TypeConverter

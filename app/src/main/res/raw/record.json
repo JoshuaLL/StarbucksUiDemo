@@ -37,6 +37,18 @@
   },
   {
     "id": 1004,
+    "type": 2,
+    "content": "2019中台灣元宵燈會-滿福迎豬。燈會限定網美必拍！",
+    "time": "",
+    "token": "",
+    "tokenXnc": "",
+    "interaction": "",
+    "social": "",
+    "revenue": "",
+    "vendor": "台中市政府"
+  },
+  {
+    "id": 1005,
     "type": 0,
     "token": "75,000,000",
     "tokenXnc": ".44",
@@ -48,7 +60,7 @@
     "vendor": ""
   },
   {
-    "id": 1005,
+    "id": 1006,
     "type": 0,
     "token": "70,500,000",
     "tokenXnc": ".223",
@@ -60,7 +72,7 @@
     "vendor": ""
   },
   {
-    "id": 1006,
+    "id": 1007,
     "type": 0,
     "token": "9,000,000",
     "tokenXnc": ".566",
@@ -72,7 +84,7 @@
     "vendor": ""
   },
   {
-    "id": 1007,
+    "id": 1008,
     "type": 0,
     "token": "8,000,000",
     "tokenXnc": ".998",
@@ -84,25 +96,13 @@
     "vendor": ""
   },
   {
-    "id": 1008,
+    "id": 1009,
     "type": 0,
     "token": "7,000,000",
     "tokenXnc": ".246",
     "interaction": "+33.111",
     "social": "+444.223",
     "revenue": "+2345.111",
-    "content": "",
-    "time": "",
-    "vendor": ""
-  },
-  {
-    "id": 1009,
-    "type": 0,
-    "token": "6,123,000",
-    "tokenXnc": ".123",
-    "interaction": "+123.123",
-    "social": "+123.123",
-    "revenue": "+123.123",
     "content": "",
     "time": "",
     "vendor": ""
@@ -240,6 +240,18 @@
     "vendor": ""
   },
   {
+    "id": 1021,
+    "type": 0,
+    "token": "6,123,000",
+    "tokenXnc": ".123",
+    "interaction": "+123.123",
+    "social": "+123.123",
+    "revenue": "+123.123",
+    "content": "",
+    "time": "",
+    "vendor": ""
+  },
+  {
     "id": 2001,
     "type": 1,
     "content": "麥克鷄塊買一送一",
@@ -298,5 +310,17 @@
     "social": "",
     "revenue": "",
     "vendor": ""
+  },
+  {
+    "id": 2006,
+    "type": 2,
+    "content": "不一樣的城市一樣的可口可樂",
+    "time": "",
+    "token": "",
+    "tokenXnc": "",
+    "interaction": "",
+    "social": "",
+    "revenue": "",
+    "vendor": "可口可樂"
   }
 ]

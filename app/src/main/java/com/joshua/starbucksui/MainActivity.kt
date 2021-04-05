@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
         binding.navView.background = null
 
         binding.fabScan.setOnClickListener {
-            Log.i("MainActivity", "fabScan")
             binding.navView.selectedItemId = R.id.navigation_scan
         }
     }

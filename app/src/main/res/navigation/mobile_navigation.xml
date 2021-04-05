@@ -9,7 +9,17 @@
         android:id="@+id/navigation_wallet"
         android:name="com.joshua.starbucksui.ui.wallet.WalletFragment"
         android:label="@string/title_wallet"
-        tools:layout="@layout/fragment_wallet" />
+        tools:layout="@layout/fragment_wallet" >
+
+        <action
+            android:id="@+id/action_wallet_fragment_to_detail_fragment"
+            app:destination="@id/detail_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_scan"
@@ -34,4 +44,14 @@
         android:name="com.joshua.starbucksui.ui.explore.ExploreFragment"
         android:label="@string/title_explore"
         tools:layout="@layout/fragment_phone" />
+
+    <fragment
+        android:id="@+id/detail_fragment"
+        android:name="com.joshua.starbucksui.ui.detail.DetailFragment"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="KEY_ITEM"
+            app:argType="com.joshua.starbucksui.model.vo.RecordItem" />
+    </fragment>
+
 </navigation>

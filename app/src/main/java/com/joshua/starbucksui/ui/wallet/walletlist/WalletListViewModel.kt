@@ -50,7 +50,7 @@ class WalletListViewModel : BaseViewModel() {
                 pageSize = PAGE_SIZE,
                 enablePlaceholders = false
             ),
-            pagingSourceFactory = { dbRepo.getAllRecords(type) }
+            pagingSourceFactory = { dbRepo.getAllRecords(type, ViewType.TYPE_AD) }
         ).flow.cachedIn(viewModelScope).collectLatest{
             _state.value = RecordItems(it)
         }

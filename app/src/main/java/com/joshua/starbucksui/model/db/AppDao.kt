@@ -5,10 +5,6 @@ import androidx.room.*
 import com.joshua.starbucksui.model.vo.RecordItem
 import com.joshua.starbucksui.model.vo.ViewType
 
-/**
- * Room data access object for storing and querying teas by various criteria.
- * @see Dao
- */
 @Dao
 interface AppDao {
 
@@ -16,7 +12,7 @@ interface AppDao {
     fun insertRecord(item: RecordItem) : Long
 
     @Transaction
-    @Query("SELECT * FROM Records WHERE type =:type")
-    fun recordPagingSource(type: ViewType): PagingSource<Int, RecordItem>
+    @Query("SELECT * FROM Records WHERE type =:type or type=:type2")
+    fun recordPagingSource(type: ViewType, type2: ViewType): PagingSource<Int, RecordItem>
 
 }

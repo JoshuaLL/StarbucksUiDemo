@@ -32,32 +32,28 @@ abstract class AppDB : RoomDatabase() {
     companion object {
         const val DB_NAME ="app.db"
         const val TABLE_RECORD = "Records"
-        const val TABLE_VOUCHER = "Vouchers"
     }
 }
 
 class StartingDB(private val context: Context) : RoomDatabase.Callback(), KoinComponent {
 
-    private val dao:AppDao by inject()
+    private val dbRepo:AppDbRepository by inject()
 
     override fun onCreate(db: SupportSQLiteDatabase) {
         fillWithStartingData(context, R.raw.record)
     }
 
     private fun fillWithStartingData(context: Context, resId:Int) {
-        Log.i("AppDB", "dao=$dao")
         try {
            loadJsonArray(context, resId)?.let { datas->
                for (i in 0 until datas.length()) {
                    val item = datas.getJSONObject(i)
-                   val id = item.getLong("id")
-
                    Log.i("AppDB", "item=$item")
 
                    CoroutineScope(Dispatchers.IO).launch {
-                       dao.insertRecord(
+                       dbRepo.insertRecord(
                            RecordItem(
-                               id= id,
+                               id= item.getLong("id"),
                                type = ViewTypeConverter().toViewType(item.getInt("type")) ?: ViewType.TYPE_RECORD,
                                token= item.getString("token"),
                                tokenXnc= item.getString("tokenXnc"),

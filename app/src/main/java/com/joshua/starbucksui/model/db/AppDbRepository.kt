@@ -5,6 +5,6 @@ import com.joshua.starbucksui.model.vo.ViewType
 
 
 class AppDbRepository (private val dao: AppDao) {
-    fun getAllRecords(type: ViewType) = dao.recordPagingSource(type)
+    fun getAllRecords(type: ViewType, type2: ViewType) = dao.recordPagingSource(type, type2)
     fun insertRecord(item: RecordItem) = dao.insertRecord(item)
 }
