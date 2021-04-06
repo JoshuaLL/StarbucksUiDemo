@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.joshua.starbucksui.R
 import com.joshua.starbucksui.databinding.FragmentDetailBinding
 import com.joshua.starbucksui.model.vo.RecordItem
@@ -25,13 +26,19 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
             setupUI(it)
         }
 
-        detailViewModel.text.observe(viewLifecycleOwner) {
-            binding.tvContent.text = it
-        }
+
     }
 
     private fun setupUI(item:RecordItem){
         binding.tvItemDetail.text =item.toString()
+
+        binding.toolbar.setNavigationOnClickListener {
+            findNavController().navigateUp()
+        }
+
+        detailViewModel.text.observe(viewLifecycleOwner) {
+            binding.tvContent.text = it
+        }
     }
 
 }
